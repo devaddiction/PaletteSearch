@@ -77,11 +77,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/search_pattern_button"
-        android:id="@+id/searchPattern"
+        android:text="@string/search_palette_button"
+        android:id="@+id/searchPalette"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/red_title"
-        android:onClick="searchPattern" />
+        android:onClick="searchPalette" />
 
 
 

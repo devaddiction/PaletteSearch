@@ -24,7 +24,7 @@ import java.net.URLConnection;
 
 public class MainActivity extends Activity {
 
-    private String API_URL = "http://www.colourlovers.com/api/patterns/?format=json";
+    private String API_URL = "http://www.colourlovers.com/api/palette/?format=json";
 
     private int red = 0;
     private int green = 0;
@@ -110,7 +110,7 @@ public class MainActivity extends Activity {
         return true;
     }
 
-    public void searchPattern(View view) throws IOException {
+    public void searchPalette(View view) throws IOException {
         new ColourLoversApi().execute(this.API_URL);
     }
 

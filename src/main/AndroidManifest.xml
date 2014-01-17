@@ -24,7 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.devaddiction.palettesearch.SearchPaletteActivity"></activity>
+        <activity android:name="com.devaddiction.palettesearch.SearchPaletteActivity"
+                  android:permission="android.permission.INTERNET"></activity>
     </application>
 
 </manifest>

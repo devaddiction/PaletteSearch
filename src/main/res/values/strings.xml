@@ -5,6 +5,6 @@
     <string name="red_title">R</string>
     <string name="green_title">G</string>
     <string name="blue_title">B</string>
-    <string name="search_pattern_button">Search Palette</string>
+    <string name="search_palette_button">Search Palette</string>
 
 </resources>
