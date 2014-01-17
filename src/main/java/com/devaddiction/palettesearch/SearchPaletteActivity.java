@@ -38,7 +38,6 @@ public class SearchPaletteActivity extends Activity {
             for (paletteNumber = 0; paletteNumber<jsonResponse.length(); paletteNumber++) {
                 palettes.add(getPaletteFromJson(jsonResponse.getJSONObject(paletteNumber)));
             }
-
     
         } catch (JSONException e) {
             e.printStackTrace();
