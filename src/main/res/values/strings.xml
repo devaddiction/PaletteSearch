@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">Palette Search</string>
+    <string name="menu_settings">Settings</string>
+    <string name="red_title">R</string>
+    <string name="green_title">G</string>
+    <string name="blue_title">B</string>
+    <string name="search_pattern_button">Search Palette</string>
+
+</resources>
