@@ -48,9 +48,9 @@ public class PaletteListAdapter extends ArrayAdapter<Palette> {
 
             Palette palette = data.get(position);
 
-/*            TextView label = new TextView(context);
+            TextView label = new TextView(context);
             label.setText(palette.getTitle());
-            linearMain.addView(label);*/
+            linearMain.addView(label);
 
             ImageView image = new ImageView(context);
             if (this.loadImageFromURL(palette.getImageUrl(), image)) {
@@ -61,8 +61,7 @@ public class PaletteListAdapter extends ArrayAdapter<Palette> {
         return row;
     }
 
-    public boolean loadImageFromURL(String fileUrl,
-                                    ImageView iv){
+    public boolean loadImageFromURL(String fileUrl, ImageView iv){
         try {
 
             URL myFileUrl = new URL (fileUrl);
