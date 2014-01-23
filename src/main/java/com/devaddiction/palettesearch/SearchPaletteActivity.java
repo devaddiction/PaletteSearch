@@ -29,7 +29,7 @@ public class SearchPaletteActivity extends Activity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        setContentView(R.layout.palette_list);
+        setContentView(R.layout.palette_result);
 
         processPalettes();
         printPalettes();

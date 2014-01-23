@@ -17,13 +17,13 @@ import android.widget.TextView;
 import com.devaddiction.palettesearch.beans.Palette;
 
 public class PaletteListAdapter extends ArrayAdapter<Palette> {
+
     Context context;
     int layoutResourceId;
     LinearLayout linearMain;
     List<Palette> data = new ArrayList<Palette>();
 
-    public PaletteListAdapter(Context context, int layoutResourceId,
-                              List<Palette> data) {
+    public PaletteListAdapter(Context context, int layoutResourceId, List<Palette> data) {
         super(context, layoutResourceId, data);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
