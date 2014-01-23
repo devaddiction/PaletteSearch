@@ -2,13 +2,9 @@ package com.devaddiction.palettesearch;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.util.Log;
-import android.widget.ImageView;
+import android.widget.ListView;
 
 import com.devaddiction.palettesearch.beans.Palette;
 
@@ -17,17 +13,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SearchPaletteActivity extends Activity {
 
     List<Palette> palettes = new ArrayList<Palette>();
+    PaletteListAdapter adapter;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,37 +29,17 @@ public class SearchPaletteActivity extends Activity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        setContentView(R.layout.palette_result);
+        setContentView(R.layout.palette_list);
 
         processPalettes();
         printPalettes();
     }
 
     private void printPalettes() {
-        int paletteNumber = 0;
-        for (paletteNumber = 0; paletteNumber < palettes.size(); paletteNumber++) {
-            drawPalette(palettes.get(paletteNumber));
-        }
-    }
-
-    private void drawPalette(Palette palette) {
-        InputStream is = null;
-        try {
-            is = (InputStream) this.fetch((String) palette.getImageUrl());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Drawable d = Drawable.createFromStream(is, "src");
-
-        ImageView paletteView = (ImageView) findViewById(R.id.palette);
-        paletteView.setImageDrawable(d);
-    }
-
-
-    public Object fetch(String address) throws MalformedURLException,IOException {
-        URL url = new URL(address);
-        Object content = url.getContent();
-        return content;
+        // add data in contact image adapter
+        adapter = new PaletteListAdapter(this, R.layout.palette_list, palettes);
+        ListView dataList = (ListView) findViewById(R.id.list);
+        dataList.setAdapter(adapter);
     }
 
     protected void processPalettes() {

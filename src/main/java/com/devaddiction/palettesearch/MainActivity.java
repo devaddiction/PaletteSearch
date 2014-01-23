@@ -24,7 +24,7 @@ import java.net.URLConnection;
 
 public class MainActivity extends Activity {
 
-    private String API_URL = "http://www.colourlovers.com/api/palette/?format=json";
+    private String API_URL = "http://www.colourlovers.com/api/palettes/?format=json";
 
     private int red = 0;
     private int green = 0;
